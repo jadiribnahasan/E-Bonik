@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\BorrowController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\retailersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,12 +15,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('insertretailers');
 });
-
-Route::get('/borrows', [BorrowController::class, 'index']);
-Route::post('/borrows', [BorrowController::class, 'add']);
-Route::get('/borrows/create', [BorrowController::class, 'create']);
-Route::get('/borrows/{borrow}/edit', [BorrowController::class, 'edit']);
-Route::put('/borrows/{borrow}', [BorrowController::class, 'update']);
-Route::delete('/borrows/{borrow}', [BorrowController::class, 'destroy']);
+Route::post('store',[retailersController::class,'store']);
