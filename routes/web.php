@@ -1,8 +1,7 @@
 <?php
 
-use App\Http\Controllers\BorrowController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\MemberController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,9 +17,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/borrows', [BorrowController::class, 'index']);
-Route::post('/borrows', [BorrowController::class, 'add']);
-Route::get('/borrows/create', [BorrowController::class, 'create']);
-Route::get('/borrows/{borrow}/edit', [BorrowController::class, 'edit']);
-Route::put('/borrows/{borrow}', [BorrowController::class, 'update']);
-Route::delete('/borrows/{borrow}', [BorrowController::class, 'destroy']);
+Route::get('list',[MemberController::class,'show']);
